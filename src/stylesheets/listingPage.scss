@@ -1,4 +1,27 @@
+$tablet: 480px;
+$desktop: 768px;
+
 body {
-    background-color: #FFFFFF;
-    color: #888888;
+  background-color: #FFFFFF;
+  color: #888888;
+
+  .product-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    .product-container {
+      display: inline-block;
+      background-color: aqua;
+      height: 100px;
+      min-width: 100%;
+
+      @media only screen and (min-width: $tablet) {
+        min-width: 50%;
+      }
+      @media only screen and (min-width: $desktop) {
+        min-width: 30%;
+      }
+    }
+  }
 }
