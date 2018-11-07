@@ -2,26 +2,38 @@ $tablet: 480px;
 $desktop: 768px;
 
 body {
-  background-color: #FFFFFF;
-  color: #888888;
+    background-color: #ffffff;
+    color: #888888;
+}
 
-  .product-list {
+.product-list {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 
     .product-container {
-      display: inline-block;
-      background-color: aqua;
-      height: 100px;
-      min-width: 100%;
+        display: flex;
+        flex-basis: 80%;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background-color: aqua;
+        margin: auto;
+        border: black;
 
-      @media only screen and (min-width: $tablet) {
-        min-width: 50%;
-      }
-      @media only screen and (min-width: $desktop) {
-        min-width: 30%;
-      }
+        @media screen and (min-width: $tablet) {
+            flex-basis: 40%;
+        }
+        @media screen and (min-width: $desktop) {
+            flex-basis: 30%;
+        }
+
+        .image {
+            max-width: 60%;
+            height: auto;
+        }
+
+        .title {
+        }
     }
-  }
 }
