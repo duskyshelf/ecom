@@ -12,6 +12,8 @@ body {
     justify-content: space-around;
     flex-wrap: wrap;
     color: #3b4153;
+    max-width: 1024px;
+    margin: auto;
 
     .product-container {
         display: flex;
@@ -23,7 +25,6 @@ body {
         height: 480px;
         border: 1px solid #dfe0ec;
         margin: 5px;
-        max-width: 320px;
 
         @media screen and (min-width: $tablet) {
             flex-basis: 40%;
