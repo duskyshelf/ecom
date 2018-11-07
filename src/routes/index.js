@@ -7,6 +7,6 @@ import PageNotFound from '../views/PageNotFound';
 export default (
     <Router history={hashHistory}>
         <Route path="/" component={HomePage} />
-        <Route path="**" component={PageNotFound} />
+        <Route path="**" component={PageNotFound} status={404} />
     </Router>
 );

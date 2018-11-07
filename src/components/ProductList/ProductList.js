@@ -7,7 +7,8 @@ export default class ProductList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            products: []
+            products: [],
+            loading: true
         };
     }
 
@@ -24,16 +25,27 @@ export default class ProductList extends Component {
                 return response.json();
             })
             .then(products => {
-                this.setState({ products });
+                this.setState({
+                    products,
+                    loading: false
+                });
             });
+    }
+
+    renderProducts() {
+        return this.state.products.map(product => (
+            <ProductCard product={product} key={product.title} />
+        ));
     }
 
     render() {
         return (
             <div className="product-list">
-                {this.state.products.map(product => (
-                    <ProductCard product={product} key={product.title} />
-                ))}
+                {this.state.loading || this.state.products.length > 0 ? (
+                    this.renderProducts()
+                ) : (
+                    <div className="products-empty">No Products Found</div>
+                )}
             </div>
         );
     }
