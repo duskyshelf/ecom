@@ -2,6 +2,7 @@ $tablet: 480px;
 $desktop: 768px;
 
 body {
+    font-family: 'Poppins Bold,Helvetica,Arial,sans-serif';
     background-color: #ffffff;
     color: #888888;
 }
@@ -10,16 +11,19 @@ body {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    color: #3b4153;
 
     .product-container {
         display: flex;
         flex-basis: 80%;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
-        background-color: aqua;
         margin: auto;
-        border: black;
+        height: 480px;
+        border: 1px solid #dfe0ec;
+        margin: 5px;
+        max-width: 320px;
 
         @media screen and (min-width: $tablet) {
             flex-basis: 40%;
@@ -29,11 +33,56 @@ body {
         }
 
         .image {
-            max-width: 60%;
+            max-width: 100%;
             height: auto;
         }
 
-        .title {
+        .label {
+            color: #ffffff;
+            background-color: #f4452d;
+            align-self: flex-start;
+            font-size: 1.25rem;
+            padding: 0 15px;
+        }
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 0 20px 1rem;
+            flex-grow: 2;
+
+            .title {
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+
+            .description {
+                font-size: 1rem;
+            }
+
+            .price-label {
+                color: #888888;
+                font-size: 1rem;
+                margin-right: 5px;
+            }
+
+            .price {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #3b4153;
+            }
+
+            .cta {
+                color: #3b4153;
+                height: 40px;
+                line-height: 40px;
+                display: block;
+                text-align: center;
+                border: 6px solid #00fc35;
+                font-weight: 700;
+                text-decoration: none;
+            }
         }
     }
 }

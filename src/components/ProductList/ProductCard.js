@@ -17,16 +17,18 @@ const ProductCard = ({ product }) => {
     return (
         <div className="product-container">
             <img className="image" src={`/dist${image.path}`} alt={image.alt} />
-            <div className="label">{productLabel}</div>
-            <h1 className="title">{title}</h1>
-            <div className="description">{description}</div>
-            <div className="price-marker">
-                <span>{priceLabel}</span>
-                <span>{`${currency}${price}`}</span>
+            {productLabel ? <div className="label">{productLabel}</div> : null}
+            <div className="info">
+                <h1 className="title">{title}</h1>
+                <div className="description">{description}</div>
+                <div className="price-container">
+                    <span className="price-label">{priceLabel}</span>
+                    <span className="price">{`${currency}${price}`}</span>
+                </div>
+                <a className="cta" href={ctaLink}>
+                    {cta}
+                </a>
             </div>
-            <a href={ctaLink}>
-                <button className="cta">{cta}</button>
-            </a>
         </div>
     );
 };
